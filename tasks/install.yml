@@ -69,7 +69,7 @@
         name: "{{ item }}"
         link: "/usr/bin/{{ item }}"
         path: "{{ java_install_dir }}/{{ java_default_link_name }}/bin/{{ item }}"
-      with_items: java_alternatives
+      with_items: "{{ java_alternatives }}"
 
     - name: check if "java_sdk" target exists
       stat: path=/usr/lib/jvm/java
